@@ -1,17 +1,27 @@
+/* RESET */
+
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
+
+/* BODY */
 
 body{
     font-family: Arial, Helvetica, sans-serif;
-    color: rgb(255, 255, 255);
+    background: linear-gradient(180deg, #0f172a, #111827);
+    color: white;
+    line-height: 1.6;
 }
+
+/* TEXTOS */
+
 .texto-padrao{
-    color: rgb(255, 255, 255);
-    background-color: rgb(20, 20, 70);
+    color: white;
     text-align: center;
     font-size: 2em;
+    padding: 20px;
 }
 
 .text-center{
@@ -22,73 +32,168 @@ body{
     margin-top: 40px;
 }
 
+/* CABEÇALHO */
+
 .container-cabecalho{
     text-align: center;
-    padding: 20px;
-    background-color: rgb(41, 41, 114);
+    padding: 30px;
+    background: rgba(15, 23, 42, 0.95);
+    border-bottom: 2px solid #2563eb;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+}
+
+.container-cabecalho img{
+    width: 120px;
+    transition: 0.3s;
+}
+
+.container-cabecalho img:hover{
+    transform: scale(1.05);
 }
 
 .container-cabecalho h3{
     font-weight: 600;
-    font-size: 2em;
-    color: rgb(255, 255, 255);
+    font-size: 2.5em;
+    margin-top: 10px;
+    color: #60a5fa;
 }
+
+/* NAVEGAÇÃO */
 
 .container-navegacao{
     text-align: center;
     padding: 20px;
-    background-color: rgb(0, 0, 0);
+    background-color: #020617;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
 }
 
-.container-navegacao a {
-    color: #ffffff;
-    font-size: 1.5em;
-    margin: 0px 70px;
-    text-decoration:none ;
+.container-navegacao a{
+    color: white;
+    font-size: 1.2em;
+    margin: 0 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+    position: relative;
+}
 
+.container-navegacao a::after{
+    content: "";
+    width: 0%;
+    height: 2px;
+    background: #3b82f6;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: 0.3s;
+}
+
+.container-navegacao a:hover::after{
+    width: 100%;
 }
 
 .container-navegacao a:hover{
-    color: crimson;
+    color: #60a5fa;
 }
 
-/* container Serviços  */
+/* QUEM SOMOS */
 
 .container-quem-somos{
-    background-color: rgb(20, 20, 70) ;
-    overflow: auto;
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
 }
+
+/* CARDS */
+
 .container-quem-somos .servico{
-    margin: 60px auto;
-    background-color:rgb(18, 18, 34) ;
-    width: 50%;
-    padding: 50px;
+    background: rgba(17, 24, 39, 0.95);
+    width: 70%;
+    margin: auto;
+    padding: 40px;
     border-radius: 20px;
     text-align: center;
-    border-style: groove;
-    border-color: white;
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    transition: 0.3s;
 }
+
+.container-quem-somos .servico:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(59,130,246,0.3);
+}
+
+.servico-icon{
+    width: 100px;
+    margin-bottom: 20px;
+}
+
 .servico-texto{
-    font-size: 1.3em;
-    text-align: center;
+    font-size: 1.2em;
+    color: #e5e7eb;
+}
+
+.servico-texto-realce{
+    color: #60a5fa;
+    font-weight: bold;
+}
+
+/* BOTÕES */
+
+.container-servico-contatos{
+    padding: 60px 20px;
 }
 
 .botoes-servicos-contatos{
-    background-color: rgb(41, 41, 114);
-     text-align: center;
-    border-radius: 100px;
-    border-style: groove;
-    border-color: white;
-    padding: 50px;
-    width: 50% auto;
+    text-align: center;
+    margin-top: 30px;
 }
+
+.botao-formatacao{
+    background: linear-gradient(90deg, #2563eb, #3b82f6);
+    color: white;
+    font-size: 1.2em;
+    padding: 18px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    margin: 15px;
+    display: inline-block;
+    transition: 0.3s;
+    box-shadow: 0 5px 15px rgba(59,130,246,0.4);
+}
+
+.botao-formatacao:hover{
+    transform: translateY(-5px);
+    background: linear-gradient(90deg, #1d4ed8, #2563eb);
+    box-shadow: 0 10px 25px rgba(59,130,246,0.5);
+}
+
+/* RODAPÉ */
 
 .container-rodape{
-    background-color: rgb(41, 41, 114);
-   
+    background-color: #020617;
+    text-align: center;
+    padding: 25px;
+    color: #cbd5e1;
+    margin-top: 50px;
+    border-top: 1px solid rgba(255,255,255,0.1);
 }
 
-.container-servico-contatos{
-    padding: 50% auto;
+/* RESPONSIVO */
 
+@media(max-width: 768px){
+
+    .container-quem-somos .servico{
+        width: 95%;
+    }
+
+    .container-navegacao a{
+        display: block;
+        margin: 15px 0;
+    }
+
+    .texto-padrao{
+        font-size: 1.5em;
+    }
 }
