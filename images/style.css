@@ -39,7 +39,6 @@ body{
     padding: 30px;
     background: rgba(15, 23, 42, 0.95);
     border-bottom: 2px solid #2563eb;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
 }
 
 .container-cabecalho img{
